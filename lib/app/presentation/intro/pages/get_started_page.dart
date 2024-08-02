@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:spotify/app/presentation/choose_mode/pages/choose_mode_page.dart';
+import 'package:spotify/common/widgets/button/basic_app_button.dart';
 import 'package:spotify/core/config/assets/app_images.dart';
 import 'package:spotify/core/config/assets/app_vectors.dart';
+import 'package:spotify/core/config/theme/app_colors.dart';
 import 'package:svg_flutter/svg.dart';
 
 class GetStartedPage extends StatelessWidget {
@@ -15,24 +18,48 @@ class GetStartedPage extends StatelessWidget {
             decoration: const BoxDecoration(
                 image: DecorationImage(
                     fit: BoxFit.fill, image: AssetImage(AppImages.introBg))),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
-              child: Column(
-                children: [
-                  Align(
-                      alignment: Alignment.topCenter,
-                      child: SvgPicture.asset(AppVectors.logo)),
-                  const Spacer(),
-                  const Text(
-                    'Enjoy Listening To Music',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 18),
-                  )
-                ],
-              ),
+          ),
+          Container(
+            color: Colors.black.withOpacity(0.15),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
+            child: Column(
+              children: [
+                Align(
+                    alignment: Alignment.topCenter,
+                    child: SvgPicture.asset(AppVectors.logo)),
+                const Spacer(),
+                const Text(
+                  'Enjoy Listening To Music',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 18),
+                ),
+                const Text(
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.grey,
+                      fontSize: 13),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 20),
+                BasicAppButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  const ChooseModePage()));
+                    },
+                    title: 'Get Started')
+              ],
             ),
+          ),
+          Container(
+            color: Colors.black.withOpacity(0.15),
           )
         ],
       ),

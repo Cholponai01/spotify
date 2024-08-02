@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotify/app/presentation/choose_mode/pages/choose_mode_page.dart';
 import 'package:spotify/app/presentation/intro/pages/get_started_page.dart';
 import 'package:spotify/core/config/assets/app_vectors.dart';
 import 'package:svg_flutter/svg.dart';
@@ -31,6 +32,6 @@ class _SplashPageState extends State<SplashPage> {
     Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-            builder: (BuildContext context) => const GetStartedPage()));
+            builder: (BuildContext context) => const ChooseModePage()));
   }
 }
